@@ -1,31 +1,33 @@
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
+import { pgTable, serial, text, numeric, timestamp } from "drizzle-orm/pg-core";
+
 const sql = neon(process.env.NEON_DATABASE_URL!);
 export const db = drizzle(sql);
 
-export const variants = {
-  id: "serial primary key",
-  org_id: "text not null",
-  product_url: "text not null",
-  style: "text not null",          // ugc | problem_solution | listicle | founder
-  hook: "text not null",
-  script: "text not null",
-  caption: "text not null",
-  hashtags: "text not null",
-  score: "numeric(3,1) not null",  // 0-10 hook strength
-  ts: "timestamptz default now()",
-} as const;
+export const products = pgTable("products", {
+  id: serial("id").primaryKey(),
+  org_id: text("org_id").notNull(),
+  url: text("url").notNull(),
+  title: text("title").notNull(),
+  bullets: text("bullets"),
+});
 
-export const products = {
-  id: "serial primary key",
-  org_id: "text not null",
-  url: "text not null",
-  title: "text not null",
-  bullets: "text",
-} as const;
+export const variants = pgTable("variants", {
+  id: serial("id").primaryKey(),
+  org_id: text("org_id").notNull(),
+  product_url: text("product_url").notNull(),
+  style: text("style").notNull(),
+  hook: text("hook").notNull(),
+  script: text("script").notNull(),
+  caption: text("caption").notNull(),
+  hashtags: text("hashtags").notNull(),
+  score: numeric("score", { precision: 3, scale: 1 }).notNull(),
+  ts: timestamp("ts").defaultNow(),
+});
 
-export const orgs = {
-  id: "serial primary key",
-  clerk_org_id: "text not null",
-  plan: "text not null default 'starter'",
-} as const;
+export const orgs = pgTable("orgs", {
+  id: serial("id").primaryKey(),
+  clerk_org_id: text("clerk_org_id").notNull(),
+  plan: text("plan").default("starter").notNull(),
+});
