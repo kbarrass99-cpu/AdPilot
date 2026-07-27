@@ -1,6 +1,6 @@
 import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
-import { pgTable, serial, text, numeric, timestamp } from "drizzle-orm/pg-core";
+import { pgTable, serial, text, real, timestamp } from "drizzle-orm/pg-core";
 
 const sql = neon(process.env.NEON_DATABASE_URL!);
 export const db = drizzle(sql);
@@ -22,7 +22,7 @@ export const variants = pgTable("variants", {
   script: text("script").notNull(),
   caption: text("caption").notNull(),
   hashtags: text("hashtags").notNull(),
-  score: numeric("score", { precision: 3, scale: 1 }).notNull(),
+  score: real("score").notNull(),
   ts: timestamp("ts").defaultNow(),
 });
 
