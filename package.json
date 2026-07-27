@@ -1,0 +1,29 @@
+{
+  "name": "adpilot",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "db:push": "drizzle-kit push"
+  },
+  "dependencies": {
+    "next": "14.2.33",
+    "react": "18.3.1",
+    "react-dom": "18.3.1",
+    "@clerk/nextjs": "^5.3.0",
+    "drizzle-orm": "^0.32.0",
+    "@neondatabase/serverless": "^0.9.0",
+    "openai": "^4.65.0",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "tailwindcss": "^3.4.0",
+    "autoprefixer": "^10.4.0",
+    "@types/node": "^20.14.0",
+    "@types/react": "^18.3.0",
+    "drizzle-kit": "^0.23.0"
+  }
+}
