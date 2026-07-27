@@ -2,7 +2,11 @@ import { neon } from "@neondatabase/serverless";
 import { drizzle } from "drizzle-orm/neon-http";
 import { pgTable, serial, text, real, timestamp } from "drizzle-orm/pg-core";
 
-const sql = neon(process.env.NEON_DATABASE_URL!);
+// Defensive init: at build time NEON_DATABASE_URL may be unavailable
+// (Next.js evaluates this module during "Collecting page data"). Pass a
+// valid-format placeholder so neon() doesn't throw — it only connects on query.
+const url = process.env.NEON_DATABASE_URL;
+const sql = neon(url && url.startsWith("postgresql://") ? url : "postgresql://placeholder:placeholder@placeholder.neon.tech/placeholder");
 export const db = drizzle(sql);
 
 export const products = pgTable("products", {
