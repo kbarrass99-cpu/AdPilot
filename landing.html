@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AdPilot — 10 TikTok ad variants in 30 seconds</title>
+<style>
+  :root { --bg:#0b1020; --card:#131a2e; --text:#e6eaf5; --muted:#94a0c0; --accent:#6366f1; --accent2:#22d3ee; --border:#26314f; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif; background:var(--bg); color:var(--text); line-height:1.6; }
+  .wrap { max-width:1080px; margin:0 auto; padding:0 24px; }
+  nav { display:flex; justify-content:space-between; align-items:center; padding:20px 0; }
+  .logo { font-weight:700; font-size:20px; } .logo span { color:var(--accent); }
+  nav a { color:var(--muted); text-decoration:none; margin-left:24px; font-size:14px; }
+  .hero { text-align:center; padding:80px 0 60px; }
+  .badge { display:inline-block; padding:6px 14px; border:1px solid var(--border); border-radius:999px; color:var(--muted); font-size:13px; margin-bottom:24px; }
+  h1 { font-size:56px; line-height:1.1; letter-spacing:-0.02em; margin-bottom:20px; }
+  h1 .grad { background:linear-gradient(90deg,var(--accent),var(--accent2)); -webkit-background-clip:text; background-clip:text; -webkit-text-fill-color:transparent; }
+  .sub { font-size:20px; color:var(--muted); max-width:620px; margin:0 auto 36px; }
+  .cta { display:inline-flex; gap:12px; }
+  .btn { background:var(--accent); color:#fff; padding:14px 28px; border-radius:10px; text-decoration:none; font-weight:600; }
+  .btn.ghost { background:transparent; border:1px solid var(--border); color:var(--text); }
+  .form { display:flex; gap:8px; max-width:560px; margin:28px auto 0; }
+  .form input { flex:1; padding:14px 16px; border-radius:10px; border:1px solid var(--border); background:var(--card); color:var(--text); font-size:15px; }
+  .form button { padding:14px 22px; border:none; border-radius:10px; background:var(--accent); color:#fff; font-weight:600; cursor:pointer; }
+  .preview { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:32px; margin:60px 0; }
+  .preview .row { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-bottom:24px; }
+  .stat { background:var(--bg); border:1px solid var(--border); border-radius:12px; padding:20px; }
+  .stat .k { color:var(--muted); font-size:13px; }
+  .stat .v { font-size:26px; font-weight:700; margin-top:6px; }
+  .stat .v.ok { color:var(--accent2); } .stat .v.warn { color:#fbbf24; }
+  .features { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; padding:40px 0; }
+  .feat { background:var(--card); border:1px solid var(--border); border-radius:14px; padding:28px; }
+  .feat h3 { font-size:18px; margin-bottom:10px; }
+  .feat p { color:var(--muted); font-size:15px; }
+  .feat .ic { font-size:24px; margin-bottom:12px; }
+  .pricing { padding:60px 0; text-align:center; }
+  .pricing .cards { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; margin-top:36px; }
+  .price { background:var(--card); border:1px solid var(--border); border-radius:16px; padding:32px; }
+  .price.feat-card { border-color:var(--accent); }
+  .price .name { color:var(--muted); font-size:14px; text-transform:uppercase; letter-spacing:.08em; }
+  .price .amt { font-size:40px; font-weight:700; margin:12px 0; }
+  .price ul { list-style:none; text-align:left; margin:20px 0; }
+  .price li { color:var(--muted); padding:8px 0; border-bottom:1px solid var(--border); font-size:15px; }
+  footer { border-top:1px solid var(--border); margin-top:60px; padding:30px 0; color:var(--muted); font-size:14px; text-align:center; }
+  @media(max-width:760px){ h1{font-size:38px} .features,.pricing .cards,.preview .row{grid-template-columns:1fr} }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <nav>
+    <div class="logo">Ad<span>Pilot</span></div>
+    <div><a href="#features">Features</a><a href="#pricing">Pricing</a><a href="#signup">Get started</a></div>
+  </nav>
+
+  <section class="hero">
+    <span class="badge">🎬 Built for TikTok Shop sellers · First 5 variants free</span>
+    <h1>10 TikTok ad variants<br><span class="grad">in 30 seconds</span></h1>
+    <p class="sub">Paste a product URL. AdPilot writes 10 scroll-stopping hooks + 15s scripts, scores each for virality, and exports to TikTok Ads. Test tonight, kill what flops by morning.</p>
+    <div class="cta"><a class="btn" href="#signup">Try free</a><a class="btn ghost" href="#demo">See the demo</a></div>
+    <form class="form" id="signup" onsubmit="return false">
+      <input type="url" placeholder="https://shop.tiktok.com/your-product" required>
+      <button>Generate 5 free</button>
+    </form>
+  </section>
+
+  <section class="preview" id="demo">
+    <div class="row">
+      <div class="stat"><div class="k">Variants generated</div><div class="v ok">10</div></div>
+      <div class="stat"><div class="k">Avg hook score</div><div class="v">7.4 / 10</div></div>
+      <div class="stat"><div class="k">Time to first script</div><div class="v" style="font-size:22px">28 seconds</div></div>
+    </div>
+    <div class="row">
+      <div class="stat"><div class="k">Top hook</div><div class="v" style="font-size:18px">"I wasn't going to buy this until I saw the 3rd thing..."</div></div>
+      <div class="stat"><div class="k">Top style</div><div class="v" style="font-size:20px">UGC unboxing · 9.1</div></div>
+      <div class="stat"><div class="k">Export</div><div class="v" style="font-size:20px">TikTok Ads CSV</div></div>
+    </div>
+  </section>
+
+  <section class="features" id="features">
+    <div class="feat"><div class="ic">🔗</div><h3>Paste &amp; go</h3><p>Drop any product URL. We scrape the title, bullets, and price — you get variants instantly.</p></div>
+    <div class="feat"><div class="ic">📝</div><h3>4 proven styles</h3><p>UGC unboxing, problem-solution, listicle, founder POV — mixed across your 10 variants.</p></div>
+    <div class="feat"><div class="ic">⭐</div><h3>Hook scoring</h3><p>Each hook rated 0-10 for scroll-stopping virality, so you test the strongest first.</p></div>
+    <div class="feat"><div class="ic">📤</div><h3>TikTok Ads export</h3><p>One-click CSV formatted for TikTok Ads Manager. No copy-pasting.</p></div>
+    <div class="feat"><div class="ic">⚡</div><h3>30-second turn</h3><p>From URL to 10 scripts faster than you can open CapCut.</p></div>
+    <div class="feat"><div class="ic">💸</div><h3>Kill flops fast</h3><p>Test 10 variants tonight, double down on winners by morning.</p></div>
+  </section>
+
+  <section class="pricing" id="pricing">
+    <h2>Pricing that pays for itself in one winner</h2>
+    <div class="cards">
+      <div class="price"><div class="name">Starter</div><div class="amt">$29/mo</div><ul><li>50 products/mo</li><li>10 variants each</li><li>CSV export</li><li>4 styles</li></ul><a class="btn ghost" href="#signup">Choose</a></div>
+      <div class="price feat-card"><div class="name">Growth</div><div class="amt">$99/mo</div><ul><li>200 products/mo</li><li>Hook scoring + sort</li><li>Priority generation</li><li>Style presets</li></ul><a class="btn" href="#signup">Choose</a></div>
+      <div class="price"><div class="name">Scale</div><div class="amt">$249/mo</div><ul><li>Unlimited products</li><li>Performance loop (v2)</li><li>API access</li><li>Priority support</li></ul><a class="btn ghost" href="#signup">Choose</a></div>
+    </div>
+  </section>
+
+  <footer>AdPilot — an MVP of the Day build · Source signal: TrustMRR verified-MRR leaderboard (Dropkiller #2) · 2026-07-27</footer>
+</div>
+</body>
+</html>
