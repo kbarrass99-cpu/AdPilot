@@ -24,6 +24,7 @@ export const variants = pgTable("variants", {
   style: text("style").notNull(),
   hook: text("hook").notNull(),
   script: text("script").notNull(),
+  
   caption: text("caption").notNull(),
   hashtags: text("hashtags").notNull(),
   score: real("score").notNull(),
